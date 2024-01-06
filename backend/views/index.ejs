@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversations List</title>
+</head>
+<body>
+    <h1>Conversations</h1>
+    <ul>
+        <% conversations.forEach(function(conversation) { %>
+            <li>
+                <a href="/show/<%= conversation._id %>">Conversation <%= conversation._id %></a>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
