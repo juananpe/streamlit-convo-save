@@ -39,7 +39,12 @@ To run the Express backend (written in express-generator) with the DEBUG flag, f
 - (GET) /test : This endpoint is used for testing purposes.
 
 ## Features
-Key features and capabilities of the tool.
+
+![Click on the extension icon to save the current conversation](image.png)
+
+![Go to / to show a list of saved conversations](image-1.png)
+
+![Click on any conversation to display it](image-2.png)
 
 ## Contributing
 Guidelines for contributing to the project.
