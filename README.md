@@ -42,7 +42,8 @@ To run the Express backend (written in express-generator) with the DEBUG flag, f
 
 ![Click on the extension icon to save the current conversation](image.png)
 
-![Go to / to show a list of saved conversations](image-1.png)
+
+<img src="image-1.png" alt="Go to / to show a list of saved conversations" width="50%">
 
 ![Click on any conversation to display it](image-2.png)
 
