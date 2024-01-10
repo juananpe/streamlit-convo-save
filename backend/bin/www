@@ -8,6 +8,16 @@ var app = require('../app');
 var debug = require('debug')('backend:server');
 var http = require('http');
 
+
+// const fs = require('fs');
+// const https = require('https');
+// Read the SSL certificate and key
+// const privateKey = fs.readFileSync('./localhost.key', 'utf8');
+// const certificate = fs.readFileSync('./localhost.crt', 'utf8');
+// const credentials = { key: privateKey, cert: certificate };
+// Create HTTPS server
+// const httpsServer = https.createServer(credentials, app);
+
 /**
  * Get port from environment and store in Express.
  */
@@ -15,19 +25,29 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
 
 var server = http.createServer(app);
+server.listen(3000, () => {
+    console.log('HTTPS Server running on port 3000');
+});
+
+
+
+
+// httpsServer.listen(port, () => {
+//   console.log('HTTPS Server running on port 3000');
+// });
+
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+// httpsServer.on('error', onError);
+// httpsServer.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
