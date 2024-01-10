@@ -10,7 +10,7 @@ load_dotenv()
 st.title("AI Chat")
 
 # API Selection
-api_option = st.selectbox('Choose your AI provider', ['Mistral', 'Llama'])
+api_option = st.selectbox('Choose your AI provider', ['Mistral', 'TogetherAI'])
 
 
 # Function to reset the state
@@ -49,14 +49,14 @@ if api_option == 'Mistral':
         reset_state()
 
 # Authentication for Llama (Together.ai)
-elif api_option == 'Llama':
+elif api_option == 'TogetherAI':
     if together_api_key:
         together.api_key = together_api_key
         model_list = together.Models.list()
         model_names = [model_dict['name'] for model_dict in model_list]
-        st.session_state["llama_model"] = st.selectbox('Select a Llama model', model_names)
+        st.session_state["llama_model"] = st.selectbox('Select a TogetherAI model', model_names)
     else:
-        st.error("Llama API key not found.")
+        st.error("TogetherAI API key not found.")
         reset_state()
 
 # Initialize the model in session state if it's not already set
@@ -102,7 +102,7 @@ if prompt := st.chat_input("What is up?"):
                 full_response += (response.choices[0].delta.content or "")
                 message_placeholder.markdown(full_response + "▌")
         
-        elif api_option == 'Llama':
+        elif api_option == 'TogetherAI':
             # console log the prompt
             print(f"<human>: {prompt}\n<bot>:")
             # console log model option
