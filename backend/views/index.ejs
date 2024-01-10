@@ -2,13 +2,31 @@
 <html>
 <head>
     <title>Conversations List</title>
+
+    <script>
+         function confirmDeletion(id, event) {
+        // Check if Command key (on Mac) or Control key (on Windows/Linux) is pressed
+        if(event.metaKey || event.ctrlKey) {
+            // Directly perform the deletion without confirmation
+            window.location.href = '/remove/' + id;
+        } else {
+            // Show confirmation dialog
+            if(confirm("Are you sure you want to delete this conversation?")) {
+                window.location.href = '/remove/' + id;
+            }
+        }
+    }
+    </script>
+    
 </head>
 <body>
     <h1>Conversations</h1>
     <ul>
         <% conversations.forEach(function(conversation) { %>
             <li>
-                <a href="/show/<%= conversation._id %>">Conversation <%= conversation._id %></a>
+                <a href="/show/<%= conversation._id %>"><%= conversation.name || 'Anonymous' %></a> 
+                      <a href="#" onclick="confirmDeletion('<%= conversation._id %>', event)">[x]</a>
+
             </li>
         <% }); %>
     </ul>
