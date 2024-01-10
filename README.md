@@ -45,7 +45,7 @@ To run the Express backend (written in express-generator) with the DEBUG flag, f
 
 <img src="image-3.png" alt="Go to / to show a list of saved conversations" width="50%"><br> Tip: You can click command+[x] to delete without confirmation prompt
 
-![Click on any conversation to display it](image-4.png)
+![Click on any conversation to display it](image-1.png)
 
 ## Contributing
 Guidelines for contributing to the project.
