@@ -47,6 +47,14 @@ To run the Express backend (written in express-generator) with the DEBUG flag, f
 
 ![Click on any conversation to display it](image-1.png)
 
+## Testing
+
+``````
+ curl -k -X POST http://localhost:3000/saveConv \
+-H "Content-Type: application/json" \
+-d '{"model": "modelX", "name": "title", "userQueries": ["User question 1", "User question 2"], "assistantAnswers": ["Assistant answer 1", "Assistant answer 2"]}'
+````
+``
 ## Contributing
 Guidelines for contributing to the project.
 
