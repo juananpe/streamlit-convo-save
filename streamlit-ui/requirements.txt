@@ -1,4 +1,4 @@
-mistralai==0.0.8
+mistralai @ git+https://github.com/mistralai/client-python@f9b006a94cb9a8624e8509dba4a7082a5f001239
 streamlit==1.29.0
 python-dotenv==1.0.0
 together
